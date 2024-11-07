@@ -1,0 +1,17 @@
+10:45:11 **** Incremental Build of configuration Debug for project a ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "a.elf" @"objects.list"   -mcpu=cortex-m3 -T"/Users/macbookair/STM32CubeIDE/workspace_1.15.1/a/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="a.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: a.elf
+ 
+arm-none-eabi-size  a.elf 
+arm-none-eabi-objdump -h -S a.elf  > "a.list"
+   text	   data	    bss	    dec	    hex	filename
+   4616	     12	   1572	   6200	   1838	a.elf
+Finished building: default.size.stdout
+ 
+Finished building: a.list
+ 
+
+10:45:12 Build Finished. 0 errors, 0 warnings. (took 722ms)
+

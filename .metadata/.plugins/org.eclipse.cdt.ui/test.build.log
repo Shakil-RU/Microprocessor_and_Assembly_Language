@@ -1,0 +1,45 @@
+20:56:33 **** Incremental Build of configuration Debug for project test ****
+make -j7 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:65: warning: "RCC_BASE" redefined
+   65 | #define RCC_BASE            (0x40021000)
+      | 
+In file included from ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:130,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:29,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32f1xx_hal_conf.h:238,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:622: note: this is the location of the previous definition
+  622 | #define RCC_BASE              (AHBPERIPH_BASE + 0x00001000UL)
+      | 
+../Core/Src/main.c:66: warning: "GPIOC_BASE" redefined
+   66 | #define GPIOC_BASE                                      (0x40011000)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:604: note: this is the location of the previous definition
+  604 | #define GPIOC_BASE            (APB2PERIPH_BASE + 0x00001000UL)
+      | 
+../Core/Src/main.c:67: warning: "TIM2_BASE" redefined
+   67 | #define TIM2_BASE                                               (0x40000000)
+      | 
+../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h:586: note: this is the location of the previous definition
+  586 | #define TIM2_BASE             (APB1PERIPH_BASE + 0x00000000UL)
+      | 
+../Core/Src/main.c:162:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  162 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"/Users/macbookair/STM32CubeIDE/workspace_1.15.1/test/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test.elf
+ 
+arm-none-eabi-size  test.elf 
+arm-none-eabi-objdump -h -S test.elf  > "test.list"
+   text	   data	    bss	    dec	    hex	filename
+    908	      4	   1572	   2484	    9b4	test.elf
+Finished building: default.size.stdout
+ 
+Finished building: test.list
+ 
+
+20:56:34 Build Finished. 0 errors, 4 warnings. (took 769ms)
+

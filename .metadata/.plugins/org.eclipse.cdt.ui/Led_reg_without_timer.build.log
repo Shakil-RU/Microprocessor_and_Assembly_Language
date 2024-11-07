@@ -1,0 +1,10 @@
+20:03:46 **** Incremental Build of configuration Debug for project Led_reg_without_timer ****
+make -j7 all 
+arm-none-eabi-size  Led_reg_without_timer.elf 
+   text	   data	    bss	    dec	    hex	filename
+    816	      4	   1572	   2392	    958	Led_reg_without_timer.elf
+Finished building: default.size.stdout
+ 
+
+20:03:46 Build Finished. 0 errors, 0 warnings. (took 357ms)
+

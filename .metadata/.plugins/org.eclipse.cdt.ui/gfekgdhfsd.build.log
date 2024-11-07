@@ -1,0 +1,10 @@
+11:58:41 **** Incremental Build of configuration Debug for project gfekgdhfsd ****
+make -j7 all 
+arm-none-eabi-size  gfekgdhfsd.elf 
+   text	   data	    bss	    dec	    hex	filename
+    784	      4	   1572	   2360	    938	gfekgdhfsd.elf
+Finished building: default.size.stdout
+ 
+
+11:58:42 Build Finished. 0 errors, 0 warnings. (took 382ms)
+
